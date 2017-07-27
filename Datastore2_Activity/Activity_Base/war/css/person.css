@@ -1,0 +1,35 @@
+#infoTable{
+	margin-top: 10px;
+	border-collapse: collapse;
+    border: 1px solid black;
+	line-height: 30px;
+	text-align: center;
+	width: 1000px;
+}
+
+.dataTable{
+	border-collapse: collapse;
+    border: 1px solid black;
+	line-height: 30px;
+	text-align: center;
+
+}
+
+.numberCol {
+	width: 100px;
+}
+
+input{
+	width: 200px;
+}
+
+.tblButton{
+	width: 204px;
+}
+
+.actionCol {
+	width: 300px;
+}
+button {
+	width: 100px
+}

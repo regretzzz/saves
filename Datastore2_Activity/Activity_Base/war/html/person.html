@@ -1,0 +1,84 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* Contains the necessary elements that will be included in the web page.
+
+* @author Lehmar Cabrillos
+* @version 0.01
+* Version History
+* 		[03/11/2016] 0.01 Lehmar Cabrillos - initial codes
+-->
+
+<!DOCTYPE html>
+<html ng-app="personApp">
+	<head>
+		<title> Person </title>
+		<link rel="stylesheet" type="text/css" href="../css/person.css">
+	</head>
+	<body margin="0 !important" ng-controller="personController">
+		<div>
+			<table>
+			<!--Label and input for the name of person -->
+				<tr>
+					<td>Id</td>
+					<td><input type="text" ng-model="idField" disabled></td>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" ng-model="firstName"></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" ng-model="lastName"></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" ng-model="address"></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td><input type="number" min="0" ng-model="age"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button  class="tblButton" ng-click="storePerson()">{{addUpdate}}</button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button class="tblButton" ng-click="clearAllFields()">CANCEL</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div>
+			<table id="infoTable">
+				<tr>
+					<td class="dataTable numberCol">Id</td>
+					<td class="dataTable">First Name</td>
+					<td class="dataTable">Last Name</td>
+					<td class="dataTable">Address</td>
+					<td class="dataTable numberCol">Age</td>
+					<td class="dataTable">Actions</td>
+				</tr>
+				<tr ng-repeat="person in personList">
+					<td class="dataTable numberCol">{{person.id}}</td>
+					<td class="dataTable">{{person.firstName}}</td>
+					<td class="dataTable">{{person.lastName}}</td>
+					<td class="dataTable">{{person.address}}</td>
+					<td class="dataTable numberCol">{{person.age}}</td>
+					<td class="dataTable actionCol">
+						<button ng-click="loadPerson(person.id)">Update</button>
+						<button ng-click="deletePerson(person.id)">Delete</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script src="../js/angular.js"></script>
+		<script src="../js/person.js"></script>
+	</body>
+</html>

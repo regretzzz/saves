@@ -1,0 +1,17 @@
+Goals:
+	- To be able to implement native Datastore API.
+	- To be able to complete the implementation for 'DAO' Screen.
+	
+Things to be implemented:
+File location: src/population.dao/PersonDao.java
+	This class handles the native implementation of the datastore. 
+	
+	1. Function: insertPerson(PersonModel inputPerson)
+		This function is used to insert an entity to the datastore. The entity is 
+		created using the modelToEntity() function, passing the 'inputPerson' as
+		parameter. The key and id for the entity is created using the KeyFactory.
+		The entity is inserted within a Transaction.
+		
+	2. Function: modelToEntity(PersonModel inputPerson)
+		This function is used to convert a model object into an 'Entity' object.
+		All of the properties are added to the entity.
